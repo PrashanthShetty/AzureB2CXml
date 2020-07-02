@@ -6,7 +6,7 @@ PolicySchemaVersion="0.3.0.0" TenantId="{tenantname}.onmicrosoft.com"
 PolicyId="B2C_1A_TrustFrameworkExtensions_BanyanTrustProvider_tp_v1" 
 PublicPolicyUri="http://{tenantname}.onmicrosoft.com/B2C_1A_TrustFrameworkExtensions_BanyanTrustProvider_tp_v1" TenantObjectId="4f4e7f3c-0280-4e30-8319-8e296d187f69">
     <BasePolicy>
-        <TenantId>kakubalb2c.onmicrosoft.com</TenantId>
+        <TenantId>{tenantname}.onmicrosoft.com</TenantId>
         <PolicyId>B2C_1A_TrustFrameworkBase_BanyanTrustProvider_v1</PolicyId>
     </BasePolicy>
     <BuildingBlocks>

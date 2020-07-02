@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" 
-TenantId="kakubalb2c.onmicrosoft.com" 
+TenantId="{tenantname}.onmicrosoft.com" 
 PolicyId="B2C_1A_signup_signin_BanyanTrustProvider_tp_v1" 
-PublicPolicyUri="http://kakubalb2c.onmicrosoft.com/B2C_1A_signup_signin_BanyanTrustProvider_tp_v1" TenantObjectId="4f4e7f3c-0280-4e30-8319-8e296d187f69">
+PublicPolicyUri="http://{tenantname}.onmicrosoft.com/B2C_1A_signup_signin_BanyanTrustProvider_tp_v1" TenantObjectId="4f4e7f3c-0280-4e30-8319-8e296d187f69">
     <BasePolicy>
-        <TenantId>kakubalb2c.onmicrosoft.com</TenantId>
+        <TenantId>{tenantname}.onmicrosoft.com</TenantId>
         <PolicyId>B2C_1A_TrustFrameworkExtensions_BanyanTrustProvider_tp_v1</PolicyId>
     </BasePolicy>
     <RelyingParty>
