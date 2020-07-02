@@ -21,9 +21,9 @@ PublicPolicyUri="http://{tenantname}.onmicrosoft.com/{policyid}" TenantObjectId=
                 <Item Key="IncludeAuthnContextClassReferences">urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</Item>
             </Metadata>
             <CryptographicKeys>
-                <Key Id="MetadataSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
-                <Key Id="SamlAssertionSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
-                <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
+                <Key Id="MetadataSigning" StorageReferenceId="{metadatacertificate}" />
+                <Key Id="SamlAssertionSigning" StorageReferenceId="{metadatacertificate}" />
+                <Key Id="SamlMessageSigning" StorageReferenceId="{metadatacertificate}" />
             </CryptographicKeys>
             <OutputClaims>
                 <OutputClaim ClaimTypeReferenceId="sub" />

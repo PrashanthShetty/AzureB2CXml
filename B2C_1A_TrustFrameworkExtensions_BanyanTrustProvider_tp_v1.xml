@@ -130,9 +130,9 @@ PublicPolicyUri="http://{tenantname}.onmicrosoft.com/{policyid}" TenantObjectId=
                         <!-- <Item Key="NameIDFormat">urn:oasis:names:tc:SAML:2.0:nameid-format:transient</Item> -->
                     </Metadata>
                     <CryptographicKeys>
-                        <Key Id="MetadataSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
-                        <Key Id="SamlAssertionSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
-                        <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
+                        <Key Id="MetadataSigning" StorageReferenceId="{metadatacertificate}" />
+                        <Key Id="SamlAssertionSigning" StorageReferenceId="{metadatacertificate}" />
+                        <Key Id="SamlMessageSigning" StorageReferenceId="{metadatacertificate}" />
                     </CryptographicKeys>
                     <InputClaims />
                     <OutputClaims />
