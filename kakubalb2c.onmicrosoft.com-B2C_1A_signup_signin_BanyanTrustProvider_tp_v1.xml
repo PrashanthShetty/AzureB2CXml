@@ -1,0 +1,39 @@
+<TrustFrameworkPolicy
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" 
+TenantId="kakubalb2c.onmicrosoft.com" 
+PolicyId="B2C_1A_signup_signin_BanyanTrustProvider_tp_v1" 
+PublicPolicyUri="http://kakubalb2c.onmicrosoft.com/B2C_1A_signup_signin_BanyanTrustProvider_tp_v1" TenantObjectId="4f4e7f3c-0280-4e30-8319-8e296d187f69">
+    <BasePolicy>
+        <TenantId>kakubalb2c.onmicrosoft.com</TenantId>
+        <PolicyId>B2C_1A_TrustFrameworkExtensions_BanyanTrustProvider_tp_v1</PolicyId>
+    </BasePolicy>
+    <RelyingParty>
+        <DefaultUserJourney ReferenceId="ResourceOwnerPasswordCredentials" />
+        <TechnicalProfile Id="PolicyProfile">
+            <DisplayName>PolicyProfile</DisplayName>
+            <Protocol Name="SAML2" />
+            <!-- <SubjectAuthenticationRequirements TimeToLive="40000" ResetExpiryWhenTokenIssued="false" /> -->
+            <Metadata>
+                <Item Key="XmlSignatureAlgorithm">Sha256</Item>
+                <!-- <Item Key="WantsSignedAssertions">true</Item> -->
+                <Item Key="IncludeAuthnContextClassReferences">urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</Item>
+            </Metadata>
+            <CryptographicKeys>
+                <Key Id="MetadataSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
+                <Key Id="SamlAssertionSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
+                <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_SAMLSigningCert" />
+            </CryptographicKeys>
+            <OutputClaims>
+                <OutputClaim ClaimTypeReferenceId="sub" />
+                <OutputClaim ClaimTypeReferenceId="objectId" />
+                <OutputClaim ClaimTypeReferenceId="displayName" DefaultValue="" />
+                <OutputClaim ClaimTypeReferenceId="givenName" DefaultValue="" />
+                <OutputClaim ClaimTypeReferenceId="surname" DefaultValue="" />
+                <!-- <OutputClaim ClaimTypeReferenceId="givenName" /><OutputClaim ClaimTypeReferenceId="surname" /> -->
+            </OutputClaims>
+            <SubjectNamingInfo ClaimType="email" Format="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress" />
+        </TechnicalProfile>
+    </RelyingParty>
+</TrustFrameworkPolicy>
