@@ -1,0 +1,33 @@
+<TrustFrameworkPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" TenantId="{tenantname}.onmicrosoft.com" PolicyId="{policyid}" PublicPolicyUri="http://{tenantname}.onmicrosoft.com/{policyid}" TenantObjectId="4f4e7f3c-0280-4e30-8319-8e296d187f69">
+  <BasePolicy>
+    <TenantId>{tenantname}.onmicrosoft.com</TenantId>
+    <PolicyId>{basepolicyid}</PolicyId>
+  </BasePolicy>
+  <RelyingParty>
+    <DefaultUserJourney ReferenceId="SignUpOrSignInBanyanTrustProvider" />
+    <TechnicalProfile Id="PolicyProfile">
+      <DisplayName>PolicyProfile</DisplayName>
+      <Protocol Name="SAML2" />
+      <!-- <SubjectAuthenticationRequirements TimeToLive="40000" ResetExpiryWhenTokenIssued="false" /> -->
+      <Metadata>
+        <Item Key="XmlSignatureAlgorithm">Sha256</Item>
+        <!-- <Item Key="WantsSignedAssertions">true</Item> -->
+        <Item Key="IncludeAuthnContextClassReferences">urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:Password,urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</Item>
+      </Metadata>
+      <CryptographicKeys>
+        <Key Id="MetadataSigning" StorageReferenceId="{metadatacertificate}" />
+        <Key Id="SamlAssertionSigning" StorageReferenceId="{metadatacertificate}" />
+        <Key Id="SamlMessageSigning" StorageReferenceId="{metadatacertificate}" />
+      </CryptographicKeys>
+      <OutputClaims>
+        <OutputClaim ClaimTypeReferenceId="email" DefaultValue="" />
+        <OutputClaim ClaimTypeReferenceId="displayName" />
+        <OutputClaim ClaimTypeReferenceId="deviceId" />
+        <OutputClaim ClaimTypeReferenceId="serialNumber" />
+        <!-- <OutputClaim ClaimTypeReferenceId="givenName" />
+        <OutputClaim ClaimTypeReferenceId="surname" /> -->
+      </OutputClaims>
+      <SubjectNamingInfo ClaimType="email" Format="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress" />
+    </TechnicalProfile>
+  </RelyingParty>
+</TrustFrameworkPolicy>
