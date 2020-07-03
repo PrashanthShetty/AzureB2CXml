@@ -99,8 +99,9 @@ PublicPolicyUri="http://{tenantname}.onmicrosoft.com/{policyid}" TenantObjectId=
                         <InputClaim ClaimTypeReferenceId="grant_type" DefaultValue="password" />
                         <InputClaim ClaimTypeReferenceId="scope" DefaultValue="openid" />
                         <InputClaim ClaimTypeReferenceId="nca" PartnerClaimType="nca" DefaultValue="1" />
-                        <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="00000000-0000-0000-0000-000000000000" />
-                        <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="00000000-0000-0000-0000-000000000000" />
+						<!--0cd15941-19ca-416f-becd-3702f9ed6d27-->
+                        <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="0cd15941-19ca-416f-becd-3702f9ed6d27" />
+                        <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="b3ce7a06-7cbc-497f-b32b-744822b13d71" />
                     </InputClaims>
                     <OutputClaims>
                         <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="oid" />
